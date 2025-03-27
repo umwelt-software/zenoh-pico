@@ -30,4 +30,4 @@ list(APPEND Sources ${Sources_Esp})
 
 idf_component_register(SRCS "${Sources}" PRIV_REQUIRES driver INCLUDE_DIRS "include")
 target_compile_options(${COMPONENT_LIB} PRIVATE -Wno-error=stringop-truncation -Wno-error=maybe-uninitialized)
-target_compile_definitions(${COMPONENT_LIB} PRIVATE ZENOH_ESPIDF=1)
+target_compile_definitions(${COMPONENT_LIB} PRIVATE ZENOH_ESPIDF=1 Z_FEATURE_UNSTABLE_API=1 Z_FEATURE_MATCHING=1)
